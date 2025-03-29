@@ -22,7 +22,7 @@ def taste_at_risk_menu(menu: PizzaMenu, quantile: float) -> float:
     # quantile is the quantile that we want to consider
     # Hint: the taste of the whole menu is the sum of the taste of all pizzas in the menu, or? ;)
     menu_taste = np.array([pizza.taste for pizza in menu.pizzas])
-    final_menu_taste = np.mean(menu_taste, axis = 0)
+    final_menu_taste = np.sum(menu_taste, axis = 0)
     return np.quantile(final_menu_taste, 1 - quantile)
 
 
